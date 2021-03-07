@@ -1,21 +1,6 @@
-# default is to have the rule disabled.
-# Explicitly enable it only if it's ready to serve traffic
-
-variable "vcd_org" {
+variable "vdc_egw" {
   type = string
 }
-
-variable "vcd_vdc" {
-  type = string
-}
-
-variable "vcd_catalog" {
-  type = string
-}
-
-# TODO - figure out of I explicitly need these variables or if it is possible to define these exclusively within modules
-
-/*
 variable "vdc_external_ip" {
   type = string
 }
@@ -64,7 +49,7 @@ variable "template_name" {
 }
 
 variable "vm_name" {
-  type = number
+  type = string
 }
 
 variable "vm_memory" {
@@ -76,4 +61,7 @@ variable "vm_cpus" {
   type = number
   description = "Number of VM CPU threads. Assumes 1 socket"
 }
-*/
+
+variable "vcd_vdc" {
+  type = string
+}

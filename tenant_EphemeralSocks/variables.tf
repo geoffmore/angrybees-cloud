@@ -27,3 +27,17 @@ variable "vcd_max_retry_timeout" {
 variable "vcd_allow_unverified_ssl" {
   type = string
 }
+
+variable "vdc_catalog" {
+  type = string
+}
+
+variable "vdc_catalog_delete_force" {
+  type = string
+  default = "true"
+}
+
+variable "vdc_catalog_delete_recursive" {
+  type = string
+  default = "true"
+}

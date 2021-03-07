@@ -1,4 +1,3 @@
-
 locals {
   # Common
   #vcd_org = var.vcd_org
@@ -27,6 +26,9 @@ module "infra" {
   vdc_egw = local.vdc_egw
 }
 
+# Unable to run this module because the vcd_network_routed imported tries to have its org set from var.vcd_org to null every time. (recreated)
+# This vdc should be fine without the state being managed in this module
+/*
 module "bootstrap" {
   source = "../modules/bootstrap"
   depends_on = [module.infra]
@@ -44,3 +46,4 @@ module "bootstrap" {
   vdc_catalog = local.vdc_catalog
   vdc_egw = local.vdc_egw
 }
+*/

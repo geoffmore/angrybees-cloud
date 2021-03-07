@@ -1,12 +1,13 @@
 # Bootstraps then VDC with necessary goodies
 # TODO - make routed networks their own module
 resource "vcd_network_routed" "main" {
+  name = var.net_name
+  vdc = var.vcd_vdc
 
   dns1 = var.net_dns1
   dns2 = var.net_dns2
   dns_suffix = var.net_dns_suffix
 
-  name = var.net_name
   edge_gateway = var.vdc_egw
   gateway = var.net_gateway
   netmask = var.net_netmask
@@ -23,12 +24,3 @@ resource "vcd_network_routed" "main" {
     end_address = var.net_static_ip_pool_end
   }
 }
-
-resource "vcd_catalog" "main" {
-  name = var.vdc_catalog
-  description = var.vdc_catalog
-  delete_recursive = var.vdc_catalog_delete_force
-  delete_force = var.vdc_catalog_delete_recursive
-}
-
-

@@ -12,7 +12,6 @@ variable "vcd_vdc" {
 variable "vcd_catalog" {
   type = string
 }
-
 # TODO - figure out of I explicitly need these variables or if it is possible to define these exclusively within modules
 
 /*
